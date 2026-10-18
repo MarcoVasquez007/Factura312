@@ -9,3 +9,12 @@ public class PruebaFactura {
         double precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio por artículo:"));
 
         Factura factura = new Factura(numeroPieza, descripcionPieza, cantidad, precio);
+        String reporte = "=== DETALLES DE LA FACTURA ===\n" +
+                "Número de pieza: " + factura.getNumeroPieza() + "\n" +
+                "Descripción: " + factura.getDescripcionPieza() + "\n" +
+                "Cantidad de artículos: " + factura.getCantidadArticulos() + "\n" +
+                "Precio por artículo: $" + factura.getPrecioPorArticulo() + "\n" +
+                "--------------------------------------------------\n" +
+                "Monto total de la factura: $" + factura.obtenerMontoFactura();
+
+        JOptionPane.showMessageDialog(null, reporte, "Resultado de la Factura", JOptionPane.INFORMATION_MESSAGE);
