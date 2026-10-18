@@ -1,11 +1,9 @@
 public class Factura {
-    // Variables de instancia
     private String numeroPieza;
     private String descripcionPieza;
     private int cantidad;
     private double precioPorArticulo;
 
-    // Constructor
     public Factura(String numeroPieza, String descripcionPieza, int cantidad, double precioPorArticulo) {
         this.numeroPieza = numeroPieza;
         this.descripcionPieza = descripcionPieza;
@@ -13,7 +11,6 @@ public class Factura {
         setPrecioPorArticulo(precioPorArticulo);
     }
 
-    // Métodos set y get para numeroPieza
     public void setNumeroPieza(String numeroPieza) {
         this.numeroPieza = numeroPieza;
     }
@@ -22,7 +19,6 @@ public class Factura {
         return numeroPieza;
     }
 
-    // Métodos set y get para descripcionPieza
     public void setDescripcionPieza(String descripcionPieza) {
         this.descripcionPieza = descripcionPieza;
     }
@@ -31,7 +27,6 @@ public class Factura {
         return descripcionPieza;
     }
 
-    // Métodos set y get para cantidad (con validación)
     public void setCantidad(int cantidad) {
         if (cantidad > 0) {
             this.cantidad = cantidad;
@@ -44,7 +39,6 @@ public class Factura {
         return cantidad;
     }
 
-    // Métodos set y get para precioPorArticulo (con validación)
     public void setPrecioPorArticulo(double precioPorArticulo) {
         if (precioPorArticulo > 0.0) {
             this.precioPorArticulo = precioPorArticulo;
@@ -57,7 +51,6 @@ public class Factura {
         return precioPorArticulo;
     }
 
-    // Método para calcular el monto de la factura
     public double obtenerMontoFactura() {
         return cantidad * precioPorArticulo;
     }

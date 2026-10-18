@@ -16,7 +16,6 @@ public class PruebaFactura {
         System.out.print("Ingrese el precio por articulo: ");
         double precio = entrada.nextDouble();
 
-        // Crear la factura con los datos ingresados
         Factura factura = new Factura(numPieza, descripcion, cantidad, precio);
 
         System.out.println("\nFactura de ferreteria");
