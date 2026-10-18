@@ -15,16 +15,8 @@ public class Factura {
         this.numeroPieza = numeroPieza;
     }
 
-    public String getNumeroPieza() {
-        return numeroPieza;
-    }
-
     public void setDescripcionPieza(String descripcionPieza) {
         this.descripcionPieza = descripcionPieza;
-    }
-
-    public String getDescripcionPieza() {
-        return descripcionPieza;
     }
 
     public void setCantidad(int cantidad) {
@@ -35,16 +27,24 @@ public class Factura {
         }
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
     public void setPrecioPorArticulo(double precioPorArticulo) {
         if (precioPorArticulo > 0.0) {
             this.precioPorArticulo = precioPorArticulo;
         } else {
             this.precioPorArticulo = 0.0;
         }
+    }
+
+    public String getNumeroPieza() {
+        return numeroPieza;
+    }
+
+    public String getDescripcionPieza() {
+        return descripcionPieza;
+    }
+
+    public int getCantidad() {
+        return cantidad;
     }
 
     public double getPrecioPorArticulo() {

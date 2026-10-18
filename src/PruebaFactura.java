@@ -1,28 +1,23 @@
-import java.util.Scanner;
-
 public class PruebaFactura {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Factura factura1 = new Factura("P-101", "Martillo de uña de 16 oz", 4, 15.50);
 
-        System.out.print("Ingrese el numero de pieza: ");
-        String numPieza = entrada.nextLine();
+        System.out.println("=== DATOS DE LA FACTURA 1 ===");
+        System.out.println("Número de pieza: " + factura1.getNumeroPieza());
+        System.out.println("Descripción: " + factura1.getDescripcionPieza());
+        System.out.println("Cantidad: " + factura1.getCantidad());
+        System.out.println("Precio por artículo: $" + factura1.getPrecioPorArticulo());
+        System.out.println("Monto total de la factura: $" + factura1.obtenerMontoFactura());
 
-        System.out.print("Ingrese el nombre de la herramienta (descripcion): ");
-        String descripcion = entrada.nextLine();
+        System.out.println("\n------------------------------------\n");
 
-        System.out.print("Ingrese la cantidad: ");
-        int cantidad = entrada.nextInt();
+        Factura factura2 = new Factura("P-202", "Cinta métrica de 5m", -5, -8.75);
 
-        System.out.print("Ingrese el precio por articulo: ");
-        double precio = entrada.nextDouble();
-
-        Factura factura = new Factura(numPieza, descripcion, cantidad, precio);
-
-        System.out.println("\nFactura de ferreteria");
-        System.out.println("Numero de pieza: " + factura.getNumeroPieza());
-        System.out.println("Descripcion: " + factura.getDescripcionPieza());
-        System.out.println("Cantidad: " + factura.getCantidad());
-        System.out.println("Precio por articulo: $" + String.format("%.2f", factura.getPrecioPorArticulo()));
-        System.out.println("Monto de la factura: $" + String.format("%.2f", factura.obtenerMontoFactura()));
+        System.out.println("=== DATOS DE LA FACTURA 2 (Con validaciones) ===");
+        System.out.println("Número de pieza: " + factura2.getNumeroPieza());
+        System.out.println("Descripción: " + factura2.getDescripcionPieza());
+        System.out.println("Cantidad (debe ser 0): " + factura2.getCantidad());
+        System.out.println("Precio por artículo (debe ser 0.0): $" + factura2.getPrecioPorArticulo());
+        System.out.println("Monto total de la factura: $" + factura2.obtenerMontoFactura());
     }
 }
