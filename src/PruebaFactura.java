@@ -53,3 +53,4 @@ public class Factura {
     public double obtenerMontoFactura() {
         return cantidadArticulos * precioPorArticulo;
     }
+}
