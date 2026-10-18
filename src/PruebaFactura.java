@@ -1,22 +1,27 @@
+import java.util.Scanner;
+
 public class PruebaFactura {
     public static void main(String[] args) {
-        // Creación de una factura de prueba con valores válidos
-        Factura factura = new Factura("1234", "Martillo", 2, 15.50);
+        Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Factura de ferreteria");
+        System.out.print("Ingrese el numero de pieza: ");
+        String numPieza = entrada.nextLine();
+
+        System.out.print("Ingrese el nombre de la herramienta (descripcion): ");
+        String descripcion = entrada.nextLine();
+
+        System.out.print("Ingrese la cantidad: ");
+        int cantidad = entrada.nextInt();
+
+        System.out.print("Ingrese el precio por articulo: ");
+        double precio = entrada.nextDouble();
+
+        // Crear la factura con los datos ingresados
+        Factura factura = new Factura(numPieza, descripcion, cantidad, precio);
+
+        System.out.println("\nFactura de ferreteria");
         System.out.println("Numero de pieza: " + factura.getNumeroPieza());
         System.out.println("Descripcion: " + factura.getDescripcionPieza());
-        System.out.println("Cantidad: " + factura.getCantidad());
-        System.out.println("Precio por articulo: $" + String.format("%.2f", factura.getPrecioPorArticulo()));
-        System.out.println("Monto de la factura: $" + String.format("%.2f", factura.obtenerMontoFactura()));
-
-        System.out.println();
-
-        // Prueba de valores no positivos (validación)
-        factura.setCantidad(-2);
-        factura.setPrecioPorArticulo(-5.0);
-
-        System.out.println("Despues de asignar valores no positivos:");
         System.out.println("Cantidad: " + factura.getCantidad());
         System.out.println("Precio por articulo: $" + String.format("%.2f", factura.getPrecioPorArticulo()));
         System.out.println("Monto de la factura: $" + String.format("%.2f", factura.obtenerMontoFactura()));
